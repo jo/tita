@@ -11,70 +11,77 @@
     body {
       padding: 0 5vw;
       margin: 0 auto;
-      max-width: 1200px;
+      max-width: 1600px;
+      font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
     }
-    figure {
-      margin: 6ex 0 0 0;
+    h1 {
+      margin-bottom: 0;
     }
-    img {
-      max-width: 90vw;
-      max-height: 90vh;
+    h1 + h2 {
+      margin-bottom: 4ex;
+      font-size: 1em;
+      font-weight: 300;
     }
-    footer {
-      margin-top: 9ex;
+    aside {
+      margin-bottom: 2ex;
     }
-
-    .grid article {
+    article {
       display: grid;
       grid: auto / repeat(12, 1fr);
+      column-gap: 1px;
+      row-gap: 1px;
     }
-    .grid figure {
+    img {
       grid-column: span 3;
-      margin: 5px;
-      position: relative;
-    }
-    .grid figure:nth-child(7n),
-    .grid figure:nth-child(7n-1),
-    .grid figure:nth-child(7n-2) {
-      grid-column: span 4;
-    }
-    .grid figcaption {
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: white;
-      opacity: 0.0;
-    }
-    .grid img {
       max-width: 100%;
       max-height: 100%;
-      display: flex;
+    }
+    img:nth-child(7n),
+    img:nth-child(7n-1),
+    img:nth-child(7n-2) {
+      grid-column: span 4;
+      margin-bottom: 3ex;
+    }
+    @media only screen and (min-width: 1024px) { 
+      article {
+        grid: auto / repeat(7, 1fr);
+        row-gap: 3ex;
+      }
+      img,
+      img:nth-child(7n),
+      img:nth-child(7n-1),
+      img:nth-child(7n-2) {
+        grid-column: auto;
+        margin-bottom: auto;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>TITA 366</h1>
-    <p>I have resolved to declutter a little every day in 2024 and will document this as <a href=https://mastodon.social/tags/TITA>#TITA</a> - Today I Threw Away.</p>
+    <h2>Today I Threw Away</h2>
+    <p>
+    I have resolved to declutter a few things <em>every fucking day</em> in 2024.
+    <output>
+    </p>
   </header>
   <article>
-    <figure>
-      <img src=tita001.web.jpg>
-      <figcaption>TITA 001: drei Kochlöffel</figcaption>
-    </figure>
-    <figure>
-      <img src=tita002.web.jpg>
-      <figcaption>TITA 002: Deckenventillator mit abgebrochenen Flügeln</figcaption>
-    </figure>
-    <figure>
-      <img src=tita003.web.jpg>
-      <figcaption>TITA 003: Röhrenlampe mit Kabel</figcaption>
-    </figure>
-    <figure>
-      <img src=tita004.web.jpg>
-      <figcaption>TITA 004: drei Fotostative</figcaption>
-    </figure>
+    <img src=tita001.web.jpg alt="drei Kochlöffel">
+    <img src=tita002.web.jpg alt="Deckenventillator mit abgebrochenen Flügeln">
+    <img src=tita003.web.jpg alt="Röhrenlampe mit Kabel">
+    <img src=tita004.web.jpg alt="drei Fotostative">
   </article>
   <footer>
-    <p>&copy; 2024 Johannes Jörg Schmidt · <a href=https://github.com/jo/tita>Source</a></p>
+    <p>
+      <a href=https://mastodon.social/tags/TITA>#TITA</a> 2024
+      &copy; Johannes Jörg Schmidt
+      ·
+      <a href=https://github.com/jo/tita>Source</a>
+    </p>
   </footer>
+  <script>
+    const imgs = document.querySelectorAll('article img')
+    const output = document.querySelector('output')
+    output.value = `I've done ${imgs.length} titas so far, that's ${Math.round(1000 * imgs.length / 366) / 10}%:`
+  </script>
