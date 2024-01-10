@@ -86,3 +86,9 @@
       <a href=https://github.com/jo/tita>Repository</a>
     </p>
   </footer>
+  <script>
+    // copy alt tag to title
+    for (const img of document.querySelectorAll('article img')) {
+      img.title = img.alt
+    }
+  </script>
