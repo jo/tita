@@ -13,23 +13,28 @@
       margin: 0 auto;
       max-width: 1600px;
       font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+      line-height: 1.5;
     }
     h1 {
       margin-bottom: 0;
     }
     h1 + h2 {
-      margin-bottom: 4ex;
+      margin-bottom: 3ex;
       font-size: 1em;
       font-weight: 300;
     }
-    aside {
-      margin-bottom: 2ex;
+    p {
+      max-width: 52em;
     }
     article {
+      margin-top: 4ex;
       display: grid;
       grid: auto / repeat(12, 1fr);
       column-gap: 1px;
       row-gap: 1px;
+    }
+    footer {
+      margin-top: 4ex;
     }
     img {
       grid-column: span 3;
@@ -62,7 +67,30 @@
     <h1>TITA 366</h1>
     <h2>Today I Threw Away</h2>
     <p>
-      I've resolved to throw away a few things I no longer need <em>every fucking day</em> in 2024.
+    Ich hab so viel Scheisse, das könnt ihr euch gar nicht vorstellen!
+    Da sind einige Sachen, die ich irgendwann einmal noch reparieren wollte.
+    Oder random Stuff, den ich aus irgendeinem Grund mal auf nem Trödel gekauft hab - teilweise vor zwanzig Jahren und mehr - und den ich gar nicht brauche.
+    Oder Zeugs, bei dem ich bisher einfach noch nicht dazu gekommen bin, es wegzuschmeissen.
+    </p>
+    <p>
+    Es tut mir richtig gut, mich mit den Dingen zu beschäftigen, die ich so im Laufe meines Lebens angesammelt habe.
+    Es ist ein Aufräumen mit der Vergangenheit, ein Sich-Befreien von Flausen und altem Ballast.
+    Dieses Ritual, jeden Tag einen Gegenstand auszusuchen, sich von ihm zu trennen, ihn zu fotografieren, zu beschreiben und schließlich in die Mülltonne zu werfen oder zum Recyclinghof zu bringen, diese Stetigkeit bewirkt bereits, dass ich achtsamer werde. Und es hilft, die Tage zusammenhängender zu erleben.
+    Und mit jedem Ding, welches ich wegwerfe, vergrößert sich meine innere Freiheit.
+    </p>
+    <p>
+    Das ist kein einfaches Projekt. Es bedeutet, am Ball zu bleiben, ein ganzes Jahr über.
+    Das hab ich bei meinen Pflanzen nie geschafft, nur wenige haben überlebt.
+    </p>
+    <p>
+    Du kannst mir dabei helfen, indem du <a href=https://mastodon.social/tags/TITA>das Projekt verfolgst</a> und es mich wissen lässt.
+    Das motiviert mich dann bestimmt, weiter zu machen.
+    </p>
+    <p>
+    Aber am schönsten währe es, wenn du meinem Beispiel folgst und dich mir anschließt!
+    </p>
+    <p>
+    &lt;3 Johannes
     </p>
   </header>
   <article>
@@ -84,15 +112,13 @@
   </article>
   <footer>
     <p>
-      <a href=https://mastodon.social/tags/TITA>#TITA</a> 2024
-      &copy; Johannes Jörg Schmidt
-      ·
-      <a href=https://github.com/jo/tita>Repository</a>
+      <a href=https://mastodon.social/tags/TITA>#TITA</a>
+      &copy; Johannes J. Schmidt
     </p>
   </footer>
   <script>
     // copy alt tag to title
-    for (const img of document.querySelectorAll('article img')) {
+    for (const img of document.querySelectorAll('img')) {
       img.title = img.alt
     }
   </script>
