@@ -141,6 +141,6 @@
   <script>
     // copy alt tag to title
     for (const img of document.querySelectorAll('img')) {
-      img.title = `#TITA ${img.src.replace(/^.*(\d{3}).*$/, '$1')} ${img.alt}`
+      img.title = `#TITA ${img.src.replace(/^.*(\d{3}).*$/, '$1')}: ${img.alt}`
     }
   </script>
